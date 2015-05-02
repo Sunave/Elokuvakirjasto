@@ -1,0 +1,15 @@
+<form name="loginUserForm">
+    <h1>Login</h1>
+    <p ng-show="message">{{message}}</p>
+    <input placeholder="Email" name="email" type="email" ng-model="email" required>
+    <div ng-show="registerUserForm.email.$invalid && registerUserForm.email.$dirty">
+        Email is required.
+    </div>
+
+    <input placeholder="Password" name="password" type="password" ng-model="password" required>
+    <div ng-show="registerUserForm.password.$invalid && registerUserForm.password.$dirty">
+        Password is required.
+    </div>
+    <button type="submit" ng-click="logIn()" ng-disabled="loginUserForm.$invalid">Login</button>
+    <p>Or <a href="#/signup">register here</a>.</p>
+</form>

@@ -11,10 +11,13 @@
     <div ng-app="MovieApp">
       <div ng-controller="MovieAppController">
         <ul id="navigation">
-          <li><a href="#/">Home</a></li>
-          <li><a href="#/movies/new">New movie</a></li>
-          <li><a href="#movies/search">Search</a></li>
+          <li><a ng-href="#/">Home</a></li>
+          <li><a ng-href="#/movies/new">New movie</a></li>
+          <li><a ng-href="#/movies/search">Search</a></li>
+          <li ng-show="!userLoggedIn"><a ng-href="#/login">Login</a></li>
+          <li ng-show="!userLoggedIn"><a ng-href="#/signup">Signup</a></li>
         </ul>
+        <button ng-click="logOut()" ng-if="userLoggedIn">Kirjaudu ulos</button>
         <div ng-view></div>
       </div>
     </div>
@@ -29,7 +32,9 @@
     <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
     <script src="app/app.js"></script>
     <script src="app/services/firebase_service.js"></script>
+    <script src="app/services/auth_service.js"></script>
     <script src="app/services/omdb_service.js"></script>
     <script src="app/controllers/movieapp_controller.js"></script>
+    <script src="app/controllers/auth_controller.js"></script>
   </body>
 </html>
