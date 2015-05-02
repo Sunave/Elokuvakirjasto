@@ -21,7 +21,7 @@ MovieApp.controller('AddMovieController', function($scope, $location, FirebaseSe
     }
 });
 
-MovieApp.controller('ListMoviesController', function($scope, FirebaseService, currentAuth) {
+MovieApp.controller('ListMoviesController', function($scope, FirebaseService) {
     $scope.movies = FirebaseService.getAll();
 
     $scope.removeMovie = function(movie) {

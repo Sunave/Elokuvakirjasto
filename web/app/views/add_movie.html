@@ -1,29 +1,29 @@
 <h1>Lisää elokuva</h1>
-<form name="editMovieForm">
+<form name="addMovieForm">
     <div class="form-group">
         <label>Nimi</label>
-        <input class="form-control" type="text" placeholder="Movie name" name="moviename" ng-model="movie.moviename" required>
+        <input class="form-control" type="text" placeholder="Movie name" name="moviename" ng-model="moviename" required>
         <div ng-show="editMovieForm.moviename.$invalid && editMovieForm.moviename.$dirty">
             Field is required.
         </div>
     </div>
     <div class="form-group">
         <label>Ohjaaja</label>
-        <input class="form-control" type="text" placeholder="Director" name="director" ng-model="movie.director" required>
+        <input class="form-control" type="text" placeholder="Director" name="director" ng-model="director" required>
         <div ng-show="editMovieForm.director.$invalid && editMovieForm.director.$dirty">
             Field is required.
         </div>
     </div>
     <div class="form-group">
         <label>Julkaisuvuosi</label>
-        <input class="form-control" type="number" placeholder="Release year" name="releaseyear" ng-model="movie.releaseyear" required>
+        <input class="form-control" type="number" placeholder="Release year" name="releaseyear" ng-model="releaseyear" required>
         <div ng-show="editMovieForm.releaseyear.$invalid && editMovieForm.releaseyear.$dirty">
             Field is required.
         </div>
     </div>
     <div class="form-group">
         <label>Kuvaus</label>
-        <textarea class="form-control" type="text" placeholder="Description" name="description" ng-model="movie.description" required></textarea>
+        <textarea class="form-control" type="text" placeholder="Description" name="description" ng-model="description" required></textarea>
         <div ng-show="editMovieForm.description.$invalid && editMovieForm.description.$dirty">
             Field is required.
         </div>
