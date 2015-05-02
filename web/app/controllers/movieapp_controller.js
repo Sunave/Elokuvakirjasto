@@ -21,7 +21,7 @@ MovieApp.controller('ListMoviesController', function($scope, FirebaseService) {
 
     $scope.removeMovie = function(movie) {
         FirebaseService.removeItem(movie);
-    }
+    };
 });
 
 MovieApp.controller('ShowMovieController', function($scope, $routeParams, $location, FirebaseService) {
@@ -38,14 +38,13 @@ MovieApp.controller('ShowMovieController', function($scope, $routeParams, $locat
 
 });
 
-/*MovieApp.controller('EditMovieController', function($scope, $location, $routeParams, FirebaseService, GetMovieService) {
-    $scope.saveMovie = function() {
-        if ($scope.moviename && $scope.director && $scope.releaseyear && $scope.description) {
-            FirebaseService.saveItem($scope.movie);
-            $location.path('movies/' + $scope.movie.$id);
-        }
-    };
+MovieApp.controller('ShowApiMovies', function($scope, OMDBService) {
+    $scope.searchDone = false;
 
-    $scope.getMovie();
-});*/
-
+    $scope.findMovies = function() {
+        OMDBService.findMovies($scope.searchName, $scope.searchYear).success(function(movies) {
+            $scope.movies = movies.Search;
+            $scope.searchDone = true;
+        });
+    }
+});

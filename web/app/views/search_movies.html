@@ -1,0 +1,15 @@
+<form name="searchMovieForm">
+    <input name="name" placeholder="Movie name" type="text" ng-model="searchName" required>
+    <input name="year" placeholder="Release year" type="text" ng-model="searchYear">
+    <br>
+    <button type="submit" ng-click="findMovies()" ng-disabled="searchMovieForm.$invalid">Etsi</button>
+</form>
+
+<h1 ng-show="!movies && searchDone">Haulla ei löytynyt yhtään elokuvaa.</h1>
+<h1 ng-show="movies">Haulla löytyi {{movies.length}} <ng-pluralize count="movies.length" when="{ 'one': 'elokuva', 'other': 'elokuvaa' }"></h1>
+
+<div ng-repeat="movie in movies">
+    <a ng-href="http://www.imdb.com/title/{{movie.imdbID}}">
+        {{movie.Title}} ({{movie.Year}})
+    </a>
+</div>

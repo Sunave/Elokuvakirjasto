@@ -11,11 +11,7 @@ module.exports = function(config){
       'web/bower_components/angularfire/dist/angularfire.min.js',
       'web/app/app.js',
       'web/app/**/**.js',
-      //'test/*.js'
-        //'test/add_movie_test.js',
-        //'test/movie_list_test.js',
-        //'test/show_movie_test.js'
-      'test/edit_movie_test.js'
+      'test/*.js'
     ],
 
     autoWatch : true,

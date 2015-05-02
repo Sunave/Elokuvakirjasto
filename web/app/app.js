@@ -11,6 +11,10 @@ MovieApp.config(function($routeProvider) {
             templateUrl: 'app/views/add_movie.html',
             controller: 'AddMovieController'
         })
+        .when('/movies/search', {
+            templateUrl: 'app/views/search_movies.html',
+            controller: 'ShowApiMovies'
+        })
         .when('/movies/:key', {
             templateUrl: 'app/views/show_movie.html',
             controller: 'ShowMovieController'
@@ -23,3 +27,7 @@ MovieApp.config(function($routeProvider) {
             redirectTo: '/movies'
         });
 });
+
+MovieApp.config(['$httpProvider', function($httpProvider) {
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
+}]);
