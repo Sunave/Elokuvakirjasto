@@ -1,15 +1,21 @@
 <form name="loginUserForm">
-    <h1>Login</h1>
+    <h1>Kirjaudu sisään</h1>
     <p ng-show="message">{{message}}</p>
-    <input placeholder="Email" name="email" type="email" ng-model="email" required>
-    <div ng-show="registerUserForm.email.$invalid && registerUserForm.email.$dirty">
-        Email is required.
+    <div class="form-group">
+        <label>Sähköposti</label>
+        <input class="form-control" placeholder="Email" name="email" type="email" ng-model="email" required>
+        <div ng-show="registerUserForm.email.$invalid && registerUserForm.email.$dirty">
+            Email is required.
+        </div>
     </div>
 
-    <input placeholder="Password" name="password" type="password" ng-model="password" required>
-    <div ng-show="registerUserForm.password.$invalid && registerUserForm.password.$dirty">
-        Password is required.
+    <div class="form-group">
+        <label>Salasana</label>
+        <input class="form-control" placeholder="Password" name="password" type="password" ng-model="password" required>
+        <div ng-show="registerUserForm.password.$invalid && registerUserForm.password.$dirty">
+            Password is required.
+        </div>
     </div>
-    <button type="submit" ng-click="logIn()" ng-disabled="loginUserForm.$invalid">Login</button>
+    <button class="btn btn-default" type="submit" ng-click="logIn()" ng-disabled="loginUserForm.$invalid">Login</button>
     <p>Or <a href="#/signup">register here</a>.</p>
 </form>

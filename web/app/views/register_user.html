@@ -1,14 +1,20 @@
 <form name="registerUserForm">
-    <h1>Register user</h1>
+    <h1>Rekisteröidy</h1>
     <p ng-show="message">{{message}}</p>
-    <input placeholder="Email" name="email" type="email" ng-model="newEmail" required>
-    <div ng-show="registerUserForm.email.$invalid && registerUserForm.email.$dirty">
-        Email is required.
+    <div class="form-group">
+        <label>Sähköposti</label>
+        <input class="form-control" placeholder="Email" name="email" type="email" ng-model="newEmail" required>
+        <div ng-show="registerUserForm.email.$invalid && registerUserForm.email.$dirty">
+            Email is required.
+        </div>
     </div>
 
-    <input placeholder="Password" name="password" type="password" ng-model="newPassword" required>
-    <div ng-show="registerUserForm.password.$invalid && registerUserForm.password.$dirty">
-        Password is required.
+    <div class="form-group">
+        <label>Salasana</label>
+        <input class="form-control" placeholder="Password" name="password" type="password" ng-model="newPassword" required>
+        <div ng-show="registerUserForm.password.$invalid && registerUserForm.password.$dirty">
+            Password is required.
+        </div>
     </div>
-    <button type="submit" ng-click="register()" ng-disabled="registerUserForm.$invalid">Register</button>
+    <button class="btn btn-default" type="submit" ng-click="register()" ng-disabled="registerUserForm.$invalid">Register</button>
 </form>

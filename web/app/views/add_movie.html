@@ -1,20 +1,32 @@
-<h1>Add movie</h1>
+<h1>Lisää elokuva</h1>
 <form name="editMovieForm">
-    <input type="text" placeholder="Movie name" name="moviename" ng-model="moviename" required><br>
-    <div ng-show="editMovieForm.moviename.$invalid && editMovieForm.moviename.$dirty">
-        Field is required.
+    <div class="form-group">
+        <label>Nimi</label>
+        <input class="form-control" type="text" placeholder="Movie name" name="moviename" ng-model="movie.moviename" required>
+        <div ng-show="editMovieForm.moviename.$invalid && editMovieForm.moviename.$dirty">
+            Field is required.
+        </div>
     </div>
-    <input type="text" placeholder="Director" name="director" ng-model="director" required><br>
-    <div ng-show="editMovieForm.director.$invalid && editMovieForm.director.$dirty">
-        Field is required.
+    <div class="form-group">
+        <label>Ohjaaja</label>
+        <input class="form-control" type="text" placeholder="Director" name="director" ng-model="movie.director" required>
+        <div ng-show="editMovieForm.director.$invalid && editMovieForm.director.$dirty">
+            Field is required.
+        </div>
     </div>
-    <input type="number" placeholder="Release year" name="releaseyear" ng-model="releaseyear" required><br>
-    <div ng-show="editMovieForm.releaseyear.$invalid && editMovieForm.releaseyear.$dirty">
-        Field is required.
+    <div class="form-group">
+        <label>Julkaisuvuosi</label>
+        <input class="form-control" type="number" placeholder="Release year" name="releaseyear" ng-model="movie.releaseyear" required>
+        <div ng-show="editMovieForm.releaseyear.$invalid && editMovieForm.releaseyear.$dirty">
+            Field is required.
+        </div>
     </div>
-    <textarea type="text" placeholder="Description" name="description" ng-model="description" required></textarea><br>
-    <div ng-show="editMovieForm.description.$invalid && editMovieForm.description.$dirty">
-        Field is required.
+    <div class="form-group">
+        <label>Kuvaus</label>
+        <textarea class="form-control" type="text" placeholder="Description" name="description" ng-model="movie.description" required></textarea>
+        <div ng-show="editMovieForm.description.$invalid && editMovieForm.description.$dirty">
+            Field is required.
+        </div>
     </div>
-    <button ng-click="addMovie()" ng-disabled="editMovieForm.$invalid">Submit</button>
+    <button class="btn btn-default" ng-click="addMovie()" ng-disabled="editMovieForm.$invalid">Submit</button>
 </form>

@@ -1,7 +1,19 @@
-<div ng-repeat="movie in movies">
-    <h1><a ng-href="#/movies/{{movie.$id}}">{{movie.moviename}}</a> <small>({{movie.releaseyear}})</small></h1>
-    <p>Directed by {{movie.director}}</p>
-    <p>{{movie.description}}</p>
-    <a ng-href="#/movies/{{movie.$id}}/edit" ng-show="userLoggedIn">Edit movie</a>
-    <button ng-click="removeMovie(movie)" ng-show="userLoggedIn">Remove movie</button>
-</div>
+<h1>Elokuvat</h1>
+
+<table class="table">
+    <tr>
+        <th>Nimi</th>
+        <th>Ohjaaja</th>
+        <th>Julkaisuvuosi</th>
+        <th ng-show="userLoggedIn"></th>
+    </tr>
+    <tr ng-repeat="movie in movies">
+        <td><a ng-href="#/movies/{{movie.$id}}">{{movie.moviename}}</a></td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.releaseyear}}</td>
+        <td ng-show="userLoggedIn">
+            <a class="btn btn-default" href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
+            <a class="btn btn-danger" href="#/movies/" ng-click="removeMovie(movie)">Poista</a>
+        </td>
+    </tr>
+</table>
